@@ -1,10 +1,8 @@
+//GFG:Two Sum - Pair with Given Sum
 package com.pavithra.easy;
-
 import java.util.Arrays;
+import java.util.HashSet;
 
-/*
-GFG:Two Sum - Pair with Given Sum
- */
 //1.Brute Force Approach: TC O(n2), SC:O(1)
 /*
 class Solution {
@@ -20,8 +18,7 @@ class Solution {
 }
 /*
 
- */
-//2.2 pointer ->TC O(nlogn), SC: O(1)
+/*2.2 pointer ->TC O(nlogn), SC: O(1)
 class Solution {
     boolean twoSum(int arr[], int target) {
         int n=arr.length;
@@ -36,7 +33,21 @@ class Solution {
         return false;
     }
 }
+*/
 
+//HashSet Optimize TC,SC:O(n)
+class Solution {
+    boolean twoSum(int arr[], int target) {
+        HashSet<Integer> set=new HashSet<>();
+        for(int num:arr){
+            int previous_num=target-num;
+            if(set.contains(previous_num)) return true;
+            set.add(num);
+        }
+        return false;
+
+    }
+}
 
 public class TwoSumPairwithGivenSum {
     public static void main(String[] args) {
