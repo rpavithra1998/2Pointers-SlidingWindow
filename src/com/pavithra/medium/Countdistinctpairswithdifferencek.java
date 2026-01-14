@@ -1,5 +1,5 @@
 //GFG:Count distinct pairs with difference k
-package com.pavithra.easy;
+package com.pavithra.medium;
 
 import java.util.HashSet;
 
